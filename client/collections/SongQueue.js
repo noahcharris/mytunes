@@ -2,7 +2,7 @@
 window.MyTunes = window.MyTunes || {};
 window.MyTunes.Collections = window.MyTunes.Collections || {};
 
-MyTunes.Collections.SongQueue = Backbone.Collection.extend({
+MyTunes.Collections.SongQueue = MyTunes.Collections.Songs.extend({
 
 
 
