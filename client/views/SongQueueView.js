@@ -4,11 +4,21 @@ window.MyTunes.Views = window.MyTunes.Views || {};
 
 MyTunes.Views.SongQueueView = Backbone.View.extend({
 
+
   initialize: function() {
+    this.render();
   },
 
-  render: function() {
-    return this.$el;
+  render: function(){
+
+
+    this.$el.children().detach();
+
+    this.$el.html('<th>Queue</th>').append(
+      this.collection.map(function(song){
+        return new MyTunes.Views.SongQueueEntryView({model: song}).render();
+      })
+    );
   }
 
 });
