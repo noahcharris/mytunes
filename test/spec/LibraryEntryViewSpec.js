@@ -7,8 +7,9 @@ describe('LibraryEntryView', function() {
       title: 'Never Gonna Mock You Up',
       url: 'example/url',
     });
-    // spyOn(MyTunes.Models.SongModel.prototype, 'enqueue'); // Uncomment this when working on the second test
+
     spyOn(MyTunes.Models.SongModel.prototype, 'play');
+    spyOn(MyTunes.Models.SongModel.prototype, 'enqueue');
     view = new MyTunes.Views.LibraryEntryView({model: model});
     view.render();
   });
@@ -19,7 +20,7 @@ describe('LibraryEntryView', function() {
   });
 
   // Comment out the above spec when implementing the below
-  xit('queues clicked songs', function(){
+  it('queues clicked songs', function(){
     view.$el.children().first().click();
     expect(model.enqueue).toHaveBeenCalled();
   });
