@@ -9,7 +9,6 @@ MyTunes.Collections.SongQueue = MyTunes.Collections.Songs.extend({
   model: MyTunes.Models.SongModel,
 
   initialize: function(){
-  	console.log('hi');
   }
 
 });
