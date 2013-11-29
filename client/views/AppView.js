@@ -12,6 +12,9 @@ MyTunes.Views.AppView = Backbone.View.extend({
     this.model.on('change:currentSong', function(model){
       this.playerView.setSong(model.get('currentSong'));
     }, this);
+    this.model.on('change:songQueue', function(model){
+      this.queueView.render();
+    })
   },
 
   render: function(){         //REMEMBER TO SET ALL OF THESE

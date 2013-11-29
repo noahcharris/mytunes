@@ -11,9 +11,10 @@ var songData = [
     artist: "Aaliyah",
   },
   {
-    url: "https://s3-us-west-1.amazonaws.com/hr-mytunes/data/05+Hot+Like+Fire.mp3",
-    title: "Hot Like Fire",
-    artist: "Aaliyah",
+    //url: "https://s3-us-west-1.amazonaws.com/hr-mytunes/data/05+Hot+Like+Fire.mp3",
+    url: '/Users/noahharris/Desktop/Music/07 Stay rough 4.mp3',
+    title: "Stay Rough",
+    artist: "Captain Cat Yes",
   },
   {
     url: "https://s3-us-west-1.amazonaws.com/hr-mytunes/data/06+If+Your+Girl+Only+Knew.mp3",
