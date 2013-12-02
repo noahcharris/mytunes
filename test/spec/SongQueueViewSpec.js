@@ -22,17 +22,5 @@ describe('SongQueueView', function() {
     view.render();
     expect(MyTunes.Views.SongQueueEntryView.prototype.render).toHaveBeenCalled();
   });
-
-  it('renders when add or remove event fires from the song queue collection', function(){
-    spyOn(MyTunes.Views.SongQueueView.prototype, 'render').andCallThrough();
-    view = new MyTunes.Views.SongQueueView({collection: fakeSongs});
-    view.collection.add({
-      artist: 'data',
-      url: '/test/testsong3.mp3',
-      title:'test song 3'
-    });
-    view.collection.pop();
-    expect(view.render.callCount).toEqual(2);
-  });
-
+  
 });
