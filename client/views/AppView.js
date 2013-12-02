@@ -9,9 +9,18 @@ MyTunes.Views.AppView = Backbone.View.extend({
     this.libraryView = new MyTunes.Views.LibraryView({collection: this.model.get('library')});
     this.queueView = new MyTunes.Views.SongQueueView({collection: this.model.get('songQueue')});
 
+
     this.model.on('change:currentSong', function(model){  //why can't I make this style of event binding work below?
       this.playerView.setSong(model.get('currentSong'));
     }, this);
+
+    this.playerView.on('ended', function(song) {
+      var q =this.queueView.collection;
+      q.remove(song);
+      if (q.length > 0)
+        this.model.set('currentSong', q.at(0));
+    }, this);
+
     this.model.get('songQueue').on('add remove', function() {
       this.queueView.render();
     }, this);

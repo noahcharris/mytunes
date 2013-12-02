@@ -22,6 +22,12 @@ MyTunes.Models.AppModel = Backbone.Model.extend({
       if (this.get('songQueue').length === 1)
         this.set('currentSong', song);
     }, this);
+    this.get('songQueue').on('dequeue', function(song) {
+      this.get('songQueue').remove(song);
+      if (this.get('currentSong') === song) {
+        this.set('currentSong', this.get('songQueue').at(0));
+      }
+    }, this);
   }
 
 });
